@@ -5,11 +5,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      todos: [{
-        id: '0001',
-        name: '任务1',
-        isCompleted: false
-      }]
+      todos: []
     }
   }
 
@@ -27,10 +23,10 @@ class App extends Component {
     }
     this.setState({ todos })
   }
-  handleRemoveTask(id) {
+  handleRemoveTask(taskId) {
     var todos = this.state.todos
     todos = todos.filter((task) => {
-      return task.id !== id
+      return task.id !== taskId
     })
     this.setState({ todos })
   }
